@@ -5,7 +5,8 @@ using UnityEngine;
 public class C_CheckPoint : MonoBehaviour
 {
     private Vector3 currentCheckpoint;
-    public C_HealthData healthData; 
+    public C_HealthData healthData;
+
     void Start()
     {
         currentCheckpoint = transform.position;

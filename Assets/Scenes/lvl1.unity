@@ -14337,6 +14337,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 191257327405605093, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: healthData
+      value: 
+      objectReference: {fileID: 11400000, guid: 13118f114c1945649b8a67a737954c2c, type: 2}
+    - target: {fileID: 191257327405605093, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: textMeshPro
       value: 
       objectReference: {fileID: 1882813606}
@@ -14358,11 +14362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2994722592660275146, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66
+      value: 51.93
       objectReference: {fileID: 0}
     - target: {fileID: 2994722592660275146, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: 2994722592660275146, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_LocalPosition.z

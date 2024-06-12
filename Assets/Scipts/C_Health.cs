@@ -6,6 +6,7 @@ public class C_Health : MonoBehaviour
 {
     public C_HealthData healthData;
     private C_lives playerLives;
+    private C_CheckPoint checkPoint;
 
     void Start()
     {
@@ -13,14 +14,11 @@ public class C_Health : MonoBehaviour
         {
             healthData.ResetHealth();
             healthData.ResetLives();
+            StartCoroutine(RegenerateHealth()); // Iniciar la regeneración de salud
         }
 
         playerLives = GetComponent<C_lives>();
-    }
-
-    private void Update()
-    {
-        RegenerateHealth();
+        checkPoint = GetComponent<C_CheckPoint>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -46,11 +44,12 @@ public class C_Health : MonoBehaviour
             playerLives.DecreaseLives();
         }
 
-        if (healthData != null)
+        if (healthData != null && checkPoint != null)
         {
             if (!healthData.OutOfLives())
             {
                 healthData.ResetHealth();
+                checkPoint.Respawn();
             }
         }
     }
