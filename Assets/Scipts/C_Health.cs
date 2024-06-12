@@ -26,7 +26,7 @@ public class C_Health : MonoBehaviour
         if (healthData != null)
         {
             healthData.TakeDamage(damageAmount);
-            Debug.Log($"Player took {damageAmount} damage, current health: {healthData.currentHealth}");
+            Debug.Log($"{damageAmount} damage, current health: {healthData.currentHealth}");
 
             if (healthData.IsDead())
             {
