@@ -7,31 +7,37 @@ using TMPro;
 
 public class C_lives : MonoBehaviour
 {
-    public int maxLives = 3;
-    public int currentLives;
-    public TextMeshProUGUI textMeshPro; 
+    public TextMeshProUGUI textMeshPro;
+    public C_HealthData healthData;
 
     void Start()
     {
-        currentLives = maxLives;
-        UpdateLivesUI(); 
+        if (healthData != null)
+        {
+            healthData.ResetLives();
+            UpdateLivesUI();
+        }
     }
-
 
     public void DecreaseLives()
     {
-        currentLives--;
-        UpdateLivesUI();
-
-        if (currentLives <= 0)
+        if (healthData != null)
         {
-            SceneManager.LoadScene("derrota");
+            healthData.LoseLife();
+            UpdateLivesUI();
+
+            if (healthData.OutOfLives())
+            {
+                SceneManager.LoadScene("derrota");
+            }
         }
     }
 
     void UpdateLivesUI()
     {
-        textMeshPro.text = $" {currentLives} " ;
+        if (textMeshPro != null && healthData != null)
+        {
+            textMeshPro.text = $"{healthData.currentLives}";
+        }
     }
-
 }

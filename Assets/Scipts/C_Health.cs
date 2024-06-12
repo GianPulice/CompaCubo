@@ -4,25 +4,54 @@ using UnityEngine;
 
 public class C_Health : MonoBehaviour
 {
-    public C_HealthData healthData;  
-    private int currentHealth;
-    private Coroutine healthRegenCoroutine;
+    public C_HealthData healthData;
     private C_lives playerLives;
 
     void Start()
     {
-        currentHealth = healthData.maxHealth;
-        healthRegenCoroutine = StartCoroutine(RegenerateHealth());
+        if (healthData != null)
+        {
+            healthData.ResetHealth();
+            healthData.ResetLives();
+        }
+
         playerLives = GetComponent<C_lives>();
+    }
+
+    private void Update()
+    {
+        RegenerateHealth();
     }
 
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        if (currentHealth <= 0)
+        if (healthData != null)
         {
-            currentHealth = 0;
+            healthData.TakeDamage(damageAmount);
+            Debug.Log($"Player took {damageAmount} damage, current health: {healthData.currentHealth}");
+
+            if (healthData.IsDead())
+            {
+                Die();
+            }
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Player died");
+
+        if (playerLives != null)
+        {
             playerLives.DecreaseLives();
+        }
+
+        if (healthData != null)
+        {
+            if (!healthData.OutOfLives())
+            {
+                healthData.ResetHealth();
+            }
         }
     }
 
@@ -32,21 +61,15 @@ public class C_Health : MonoBehaviour
         {
             yield return new WaitForSeconds(healthData.healthRegenInterval);
 
-            if (currentHealth < healthData.maxHealth)
+            if (healthData.currentHealth < healthData.maxHealth)
             {
-                currentHealth += healthData.healthRegenAmount;
-                if (currentHealth > healthData.maxHealth)
+                healthData.currentHealth += healthData.healthRegenAmount;
+                if (healthData.currentHealth > healthData.maxHealth)
                 {
-                    currentHealth = healthData.maxHealth;
+                    healthData.currentHealth = healthData.maxHealth;
                 }
             }
         }
-    }
-
-    private void Die()
-    {
-        Debug.Log("Player has died");
-        playerLives.DecreaseLives();
     }
 
 }

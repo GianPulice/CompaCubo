@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class E_damage : MonoBehaviour
 {
-    public int damageAmount;
+    public int damageAmount = 10;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            C_Health playerHealthData = collision.gameObject.GetComponent<C_Health>();
-            if (playerHealthData != null)
+            Debug.Log("Enemy collided with player");
+            C_Health playerHealth = collision.gameObject.GetComponent<C_Health>();
+            if (playerHealth != null)
             {
-                playerHealthData.TakeDamage(damageAmount);
+                playerHealth.TakeDamage(damageAmount);
             }
         }
     }
