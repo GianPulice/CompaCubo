@@ -14,7 +14,7 @@ public class C_Health : MonoBehaviour
         {
             healthData.ResetHealth();
             healthData.ResetLives();
-            StartCoroutine(RegenerateHealth()); // Iniciar la regeneración de salud
+            StartCoroutine(RegenerateHealth()); 
         }
 
         playerLives = GetComponent<C_lives>();
