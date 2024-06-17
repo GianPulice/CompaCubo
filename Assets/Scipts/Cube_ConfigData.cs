@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewCubeConfig", menuName = "Cube Config", order = 53)]
+[CreateAssetMenu(fileName = "CubeConfig", menuName = "Cube Config", order = 53)]
 public class Cube_ConfigData : ScriptableObject
 {
     public float repulsionRadius = 5f;

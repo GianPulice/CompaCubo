@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewHealthData", menuName = "Health Data", order = 51)]
+[CreateAssetMenu(fileName = "PlayerHealthData", menuName = "Health Data", order = 51)]
 public class C_HealthData : ScriptableObject
 { 
 

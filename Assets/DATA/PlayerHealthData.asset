@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4791d7853055ee4f8d4b5c427a5ac4d, type: 3}
-  m_Name: NewHealthData
+  m_Name: PlayerHealthData
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100

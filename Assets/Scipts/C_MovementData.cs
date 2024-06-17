@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewMovementData", menuName = "Movement Data", order = 52)]
+[CreateAssetMenu(fileName = "PlayerMovementData", menuName = "Movement Data", order = 52)]
 public class C_MovementData : ScriptableObject
 {
     public float moveSpeed = 5f;
