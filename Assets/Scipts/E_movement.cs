@@ -12,6 +12,7 @@ public class E_movement : MonoBehaviour
     private Vector3 rightPos;
     private bool movingRight = true;
     private Rigidbody2D rb;
+    private E_strategy currentStrategy;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class E_movement : MonoBehaviour
         rightPos = rightPoint.position;
         Destroy(leftPoint.gameObject);
         Destroy(rightPoint.gameObject);
+        currentStrategy = new E_MoveRightStrategy();
     }
 
     void Update()
@@ -29,23 +31,18 @@ public class E_movement : MonoBehaviour
 
     void Patrol()
     {
-        if (movingRight)
+
+        currentStrategy.Move(rb, moveSpeed, movingRight ? rightPos : leftPos);
+
+        if (movingRight && rb.transform.position.x >= rightPos.x)
         {
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            if (transform.position.x >= rightPos.x)
-            {
-                movingRight = false;
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
+            movingRight = false;
+            currentStrategy = new E_MoveLeftStrategy();
         }
-        else
+        else if ((!movingRight && rb.transform.position.x <= leftPos.x))
         {
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            if (transform.position.x <= leftPos.x)
-            {
-                movingRight = true;
-                transform.localScale = new Vector3(1, 1, 1);
-            }
+            movingRight = true;
+            currentStrategy = new E_MoveRightStrategy();
         }
     }
 }
