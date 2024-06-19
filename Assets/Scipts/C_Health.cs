@@ -28,6 +28,8 @@ public class C_Health : MonoBehaviour
             healthData.TakeDamage(damageAmount);
             Debug.Log($"{damageAmount} damage, current health: {healthData.currentHealth}");
 
+            UI_Updater.Instance.UpdateHealth.Invoke();
+
             if (healthData.IsDead())
             {
                 Die();
@@ -49,6 +51,7 @@ public class C_Health : MonoBehaviour
             if (!healthData.OutOfLives())
             {
                 healthData.ResetHealth();
+                UI_Updater.Instance.UpdateHealth.Invoke();
                 checkPoint.Respawn();
             }
         }
@@ -67,7 +70,11 @@ public class C_Health : MonoBehaviour
                 {
                     healthData.currentHealth = healthData.maxHealth;
                 }
+
+                UI_Updater.Instance.UpdateHealth.Invoke();
+
             }
+
         }
     }
 

@@ -14,9 +14,9 @@ public class C_HealthBar : MonoBehaviour
             Debug.LogError("Health bar image or player health data is not assigned.");
             return;
         }
-    }
+    } 
 
-    void Update()
+    public void UpdateHealthBar()
     {
         if (healthBarImage != null && playerHealthData != null)
         {
