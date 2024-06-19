@@ -24,8 +24,8 @@ public class C_lives : MonoBehaviour
         if (healthData != null)
         {
             healthData.LoseLife();
-            UpdateLivesUI();
-
+            //UpdateLivesUI();
+            UI_Updater.Instance.LoseLife.Invoke();
             if (healthData.OutOfLives())
             {
                 SceneManager.LoadScene("derrota");
@@ -33,7 +33,7 @@ public class C_lives : MonoBehaviour
         }
     }
 
-    void UpdateLivesUI()
+    public void UpdateLivesUI()
     {
         if (textMeshPro != null && healthData != null)
         {
