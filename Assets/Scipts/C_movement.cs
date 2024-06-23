@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,13 @@ public class C_movement : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
+    private Animator MovimientoAnim;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        MovimientoAnim = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,6 +30,7 @@ public class C_movement : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
+        MovimientoAnim.SetFloat("Horizontal",Mathf.Abs( moveInput));
 
         rb.velocity = new Vector2(moveInput * movementData.moveSpeed, rb.velocity.y);
 
@@ -42,6 +47,7 @@ public class C_movement : MonoBehaviour
     void Jump()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        MovimientoAnim.SetBool("EnElSuelo", isGrounded);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
