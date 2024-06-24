@@ -15,7 +15,7 @@ public class C_Health : MonoBehaviour
         {
             healthData.ResetHealth();
             healthData.ResetLives();
-            StartCoroutine(RegenerateHealth()); 
+            StartCoroutine(RegenerateHealth());
         }
 
         playerLives = GetComponent<C_lives>();
@@ -32,10 +32,7 @@ public class C_Health : MonoBehaviour
 
             UI_Updater.Instance.UpdateHealth.Invoke();
 
-            if (questManager != null)
-            {
-                questManager.RegisterLifeLost();
-            }
+            questManager.RegisterDamageTaken();
 
             if (healthData.IsDead())
             {
@@ -79,9 +76,7 @@ public class C_Health : MonoBehaviour
                 }
 
                 UI_Updater.Instance.UpdateHealth.Invoke();
-
             }
-
         }
     }
 

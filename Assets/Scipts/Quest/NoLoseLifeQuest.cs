@@ -7,6 +7,11 @@ public class NoLoseLifeQuest : Quest
 {
     private bool lostLife;
 
+    private void OnEnable()
+    {
+        lostLife = false;
+    }
+
     public void LoseLife()
     {
         lostLife = true;

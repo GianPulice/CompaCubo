@@ -10,7 +10,6 @@ public class QuestManager : MonoBehaviour
     {
 
         ResetCoinQuests();
-
         foreach (var quest in quests)
         {
             if (quest is CompleteInTimeQuest timeQuest)
@@ -62,6 +61,17 @@ public class QuestManager : MonoBehaviour
     }
 
     public void RegisterLifeLost()
+    {
+        foreach (var quest in quests)
+        {
+            if (quest is NoLoseLifeQuest noLoseLifeQuest)
+            {
+                noLoseLifeQuest.LoseLife();
+            }
+        }
+    }
+
+    public void RegisterDamageTaken()
     {
         foreach (var quest in quests)
         {
