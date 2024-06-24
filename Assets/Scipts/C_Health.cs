@@ -7,6 +7,7 @@ public class C_Health : MonoBehaviour
     public C_HealthData healthData;
     private C_lives playerLives;
     private C_CheckPoint checkPoint;
+    private QuestManager questManager;
 
     void Start()
     {
@@ -14,11 +15,12 @@ public class C_Health : MonoBehaviour
         {
             healthData.ResetHealth();
             healthData.ResetLives();
-            StartCoroutine(RegenerateHealth()); 
+            StartCoroutine(RegenerateHealth());
         }
 
         playerLives = GetComponent<C_lives>();
         checkPoint = GetComponent<C_CheckPoint>();
+        questManager = FindObjectOfType<QuestManager>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -29,6 +31,8 @@ public class C_Health : MonoBehaviour
             Debug.Log($"{damageAmount} damage, current health: {healthData.currentHealth}");
 
             UI_Updater.Instance.UpdateHealth.Invoke();
+
+            questManager.RegisterDamageTaken();
 
             if (healthData.IsDead())
             {
@@ -72,9 +76,7 @@ public class C_Health : MonoBehaviour
                 }
 
                 UI_Updater.Instance.UpdateHealth.Invoke();
-
             }
-
         }
     }
 
