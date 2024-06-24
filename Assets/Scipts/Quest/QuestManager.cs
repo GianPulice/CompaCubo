@@ -8,6 +8,9 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
+
+        ResetAllQuests();
+
         foreach (var quest in quests)
         {
             if (quest is CompleteInTimeQuest timeQuest)
@@ -65,6 +68,17 @@ public class QuestManager : MonoBehaviour
             if (quest is NoLoseLifeQuest noLoseLifeQuest)
             {
                 noLoseLifeQuest.LoseLife();
+            }
+        }
+    }
+
+    void ResetAllQuests()
+    {
+        foreach (var quest in quests)
+        {
+            if (quest is CollectCoinsQuest coinQuest)
+            {
+                coinQuest.Reset();
             }
         }
     }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Loco por el oro
   description: Agarra todas las monedas a lo largo del nivel
-  requiredCoins: 3
+  requiredCoins: 0
