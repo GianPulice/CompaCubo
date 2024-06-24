@@ -9,7 +9,7 @@ public class QuestManager : MonoBehaviour
     void Start()
     {
 
-        ResetAllQuests();
+        ResetCoinQuests();
 
         foreach (var quest in quests)
         {
@@ -72,7 +72,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void ResetAllQuests()
+    void ResetCoinQuests()
     {
         foreach (var quest in quests)
         {

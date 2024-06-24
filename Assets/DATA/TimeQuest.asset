@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0526ea3f1516179418c97bc3cd061518, type: 3}
   m_Name: TimeQuest
   m_EditorClassIdentifier: 
-  questName: Pies ligeros
+  questName: Llega antes que pase el timepo
   description: Llega al final antes de que termine el tiempo
   timeLimit: 300

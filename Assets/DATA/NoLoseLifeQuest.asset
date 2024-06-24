@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7dda017eb47a6f43a22cd7edb101f7f, type: 3}
   m_Name: NoLoseLifeQuest
   m_EditorClassIdentifier: 
-  questName: SIn molestias
+  questName: NO HIT !
   description: No pierdas vida durante el nivel

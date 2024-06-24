@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23b2e35014c6c4db28ebcb7561237b, type: 3}
   m_Name: CollectCoinsQuest
   m_EditorClassIdentifier: 
-  questName: Loco por el oro
+  questName: Recoge todas las monedas
   description: Agarra todas las monedas a lo largo del nivel
-  requiredCoins: 0
+  requiredCoins: 3
