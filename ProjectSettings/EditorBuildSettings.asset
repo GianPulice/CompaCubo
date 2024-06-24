@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/lvl1.unity
     guid: 70fbd388173d9634698e57b8b4d78635
   - enabled: 1
-    path: Assets/Scenes/level2 tilemap.unity
+    path: Assets/Scenes/level2.unity
     guid: 329cbf1634cf2a149be25dcb87389aef
   - enabled: 1
     path: Assets/Scenes/derrota.unity
