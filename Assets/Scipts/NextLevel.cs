@@ -17,12 +17,13 @@ public class NextLevel : MonoBehaviour
     }
     public void CambioNivel()
     {
-        SceneManager.LoadScene(2);
+        int nivelactual = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(nivelactual + 1);
 
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag== "player")
+        if(collision.gameObject.tag== "cambio")
         {
             CambioNivel();
         }
