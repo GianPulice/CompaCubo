@@ -13,4 +13,11 @@ public class Finish : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            Cambio();
+        }
+    }
 }
