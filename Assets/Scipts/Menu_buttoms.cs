@@ -12,6 +12,21 @@ public class Menu_buttoms : MonoBehaviour
         SceneManager.LoadScene("Scene1");
     }
 
+    public void LoadLevelSelector()
+    {
+        SceneManager.LoadScene("levelSelector");
+    }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("lvl1");
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("lvl2");
+    }
+
     public void QuitGame()
     {
 
