@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vicotria.unity
     guid: 87b47aef79623d84486e00099858dcde
+  - enabled: 1
+    path: Assets/Scenes/Scene1.unity
+    guid: 66151bc6f1f88514d9ce5e223abd4e7e
   m_configObjects: {}

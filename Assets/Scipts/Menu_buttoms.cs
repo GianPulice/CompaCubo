@@ -9,7 +9,7 @@ public class Menu_buttoms : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("lvl1");
+        SceneManager.LoadScene("Scene1");
     }
 
     public void QuitGame()
