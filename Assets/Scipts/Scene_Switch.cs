@@ -13,6 +13,7 @@ public class Scene_Switch : MonoBehaviour
         {
             LoadScene();
         }
+
     }
 
     private void LoadScene()
