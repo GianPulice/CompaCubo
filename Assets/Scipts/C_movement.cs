@@ -11,7 +11,7 @@ public class C_movement : MonoBehaviour
     private bool isGrounded;
     public LayerMask groundLayer;
     public Transform groundCheck;
-    public float groundCheckRadius = 0.2f;
+    public float groundCheckRadius = 0.3f;
     private Animator MovimientoAnim;
 
 
