@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/lvl1.unity
     guid: 70fbd388173d9634698e57b8b4d78635
   - enabled: 1
+    path: Assets/Scenes/lvl2.unity
+    guid: 1b5297c0283972f4eba94354673c1318
+  - enabled: 1
     path: Assets/Scenes/derrota.unity
     guid: b91b249e3859d7b49804f38686c37d39
+  - enabled: 1
+    path: Assets/Scenes/Vicotria.unity
+    guid: 87b47aef79623d84486e00099858dcde
   m_configObjects: {}

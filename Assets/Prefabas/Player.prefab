@@ -193,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.040324688, y: -0.20834458}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -204,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.9193506, y: 1.5833108}
   m_EdgeRadius: 0
 --- !u!50 &6255837153195418119
 Rigidbody2D:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 0}
-  playerHealth: {fileID: 0}
+  playerHealthData: {fileID: 0}
 --- !u!114 &4281064974234555453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,10 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e372c9c8ccf7f064ba971fc281c58d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthRegenAmount: 2
-  healthRegenInterval: 1
+  healthData: {fileID: 0}
 --- !u!114 &191257327405605093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,9 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d690de7d97fb46408852976ba7f5e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
-  currentLives: 0
   textMeshPro: {fileID: 0}
+  healthData: {fileID: 0}
 --- !u!114 &2195309427590438042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc49e7d409da40d4e97681c45d0464b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthData: {fileID: 0}
 --- !u!1 &7895112990501978842
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7895112990501978842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42, y: -1.44, z: 0}
+  m_LocalPosition: {x: -0.1, y: -1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
