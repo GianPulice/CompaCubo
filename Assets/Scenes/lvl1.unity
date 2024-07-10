@@ -464,11 +464,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7fb71a6759d1e4b87404eb91ae3bdc, type: 3}
---- !u!1 &150007173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2429063542262755840, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
-  m_PrefabInstance: {fileID: 2429063543304297740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &216661674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1634,6 +1629,17 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1075067934 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3051636031606587191, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+  m_PrefabInstance: {fileID: 2429063543304297740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053479df8f52f174ba87968f5abcd7ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1076552496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19600,26 +19606,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d267988244584a478e8723694e5a9c7, type: 3}
---- !u!224 &1508277656 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2429063542262755868, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
-  m_PrefabInstance: {fileID: 2429063543304297740}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1508277657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150007173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053479df8f52f174ba87968f5abcd7ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questManager: {fileID: 949838308}
-  questTitleTextPrefab: {fileID: 3013134247384752984, guid: 194bb1089ef80df4f87be7d86b001561, type: 3}
-  questTitleContainer: {fileID: 1508277656}
 --- !u!1001 &1547826208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21297,6 +21283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: helathbar
       objectReference: {fileID: 0}
+    - target: {fileID: 3051636031606587191, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: questManager
+      value: 
+      objectReference: {fileID: 949838308}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
 --- !u!1001 &3585429264398210667
@@ -21415,6 +21405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6231085267302892706, guid: f5deb29d4cfff3246b5fa06f9400356e, type: 3}
+      propertyPath: questDisplay
+      value: 
+      objectReference: {fileID: 1075067934}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5deb29d4cfff3246b5fa06f9400356e, type: 3}
 --- !u!1001 &5262800892571443593

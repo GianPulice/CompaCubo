@@ -12,7 +12,7 @@ public class QuestDisplay : MonoBehaviour
 
     void Start()
     {
-      
+        HideQuestUIs();
 
         CreateQuestUIs();
     }
@@ -52,5 +52,14 @@ public class QuestDisplay : MonoBehaviour
                 questTitleText.color = Color.red;
             }
         }
+    }
+    public void HideQuestUIs()
+    {
+        questTitleContainer.gameObject.SetActive(false);
+    }
+
+    public void ShowQuestUIs()
+    {
+        questTitleContainer.gameObject.SetActive(true);
     }
 }
