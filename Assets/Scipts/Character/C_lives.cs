@@ -28,7 +28,7 @@ public class C_lives : MonoBehaviour
             UI_Updater.Instance.LoseLife.Invoke();
             if (healthData.OutOfLives())
             {
-                SceneManager.LoadScene("derrota");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

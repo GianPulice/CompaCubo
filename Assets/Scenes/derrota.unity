@@ -958,7 +958,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1599996782}
         m_TargetAssemblyTypeName: Menu_buttoms, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1064,9 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
-
-'
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9598bd83d6b3124fa663e214f2c5062, type: 2}
   m_sharedMaterial: {fileID: 1951867374605941532, guid: d9598bd83d6b3124fa663e214f2c5062, type: 2}

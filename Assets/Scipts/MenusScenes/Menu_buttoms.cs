@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class Menu_buttoms : MonoBehaviour
 {
     
+    public void LoadTitle()
+    {
+        SceneManager.LoadScene("title");
+    }
 
     public void LoadScene()
     {
