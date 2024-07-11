@@ -8,6 +8,7 @@ public class C_Health : MonoBehaviour
     private C_lives playerLives;
     private C_CheckPoint checkPoint;
     private QuestManager questManager;
+    private AudioSource damageAudioSource;
 
     void Start()
     {
@@ -21,6 +22,15 @@ public class C_Health : MonoBehaviour
         playerLives = GetComponent<C_lives>();
         checkPoint = GetComponent<C_CheckPoint>();
         questManager = FindObjectOfType<QuestManager>();
+
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        if (audioSources.Length >= 3)
+        {
+            damageAudioSource = audioSources[2]; 
+
+        }
+     
     }
 
     public void TakeDamage(int damageAmount)
@@ -33,6 +43,11 @@ public class C_Health : MonoBehaviour
             UI_Updater.Instance.UpdateHealth.Invoke();
 
             questManager.RegisterDamageTaken();
+
+            if (damageAudioSource != null && damageAudioSource.clip != null)
+            {
+                damageAudioSource.Play();
+            }
 
             if (healthData.IsDead())
             {
@@ -79,5 +94,4 @@ public class C_Health : MonoBehaviour
             }
         }
     }
-
 }

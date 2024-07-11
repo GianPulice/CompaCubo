@@ -11,6 +11,21 @@ public class Plataform_Elevator : MonoBehaviour
     public LayerMask cubeLayer;
 
     private bool isCubeOnPlate = false;
+    private AudioSource elevatorSound;
+    private bool isMoving = false;
+
+    void Start()
+    {
+        elevatorSound = GetComponent<AudioSource>();
+        if (elevatorSound == null)
+        {
+            Debug.LogWarning("No AudioSource ");
+        }
+        else
+        {
+            elevatorSound.loop = true;
+        }
+    }
 
     void Update()
     {
@@ -35,13 +50,30 @@ public class Plataform_Elevator : MonoBehaviour
 
     void MoveElevator()
     {
-        if (isCubeOnPlate)
+        Vector2 targetPosition = isCubeOnPlate ? bottomPosition.position : topPosition.position;
+
+        if ((Vector2)elevator.position != targetPosition)
         {
-            elevator.position = Vector2.MoveTowards(elevator.position, bottomPosition.position, elevatorSpeed * Time.deltaTime);
+            elevator.position = Vector2.MoveTowards(elevator.position, targetPosition, elevatorSpeed * Time.deltaTime);
+            if (!isMoving)
+            {
+                isMoving = true;
+                if (elevatorSound != null && !elevatorSound.isPlaying)
+                {
+                    elevatorSound.Play();
+                }
+            }
         }
         else
         {
-            elevator.position = Vector2.MoveTowards(elevator.position, topPosition.position, elevatorSpeed * Time.deltaTime);
+            if (isMoving)
+            {
+                isMoving = false;
+                if (elevatorSound != null && elevatorSound.isPlaying)
+                {
+                    elevatorSound.Stop();
+                }
+            }
         }
     }
 
