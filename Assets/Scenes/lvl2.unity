@@ -12774,6 +12774,14 @@ PrefabInstance:
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1304323320}
+    - target: {fileID: 3143364218040911309, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966317921308130310, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
 --- !u!1001 &6565033336473383525
@@ -12976,6 +12984,10 @@ PrefabInstance:
     - target: {fileID: 8609005480022446737, guid: fcd1351803a11e94782b4b4f06357e05, type: 3}
       propertyPath: m_Pitch
       value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609005480022446737, guid: fcd1351803a11e94782b4b4f06357e05, type: 3}
+      propertyPath: m_Volume
+      value: 0.234
       objectReference: {fileID: 0}
     - target: {fileID: 8609005480022446750, guid: fcd1351803a11e94782b4b4f06357e05, type: 3}
       propertyPath: m_Name
