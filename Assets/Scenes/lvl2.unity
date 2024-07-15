@@ -12742,6 +12742,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2400719947776202050, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1146785281, guid: a19daa4f6e8f6d943af10796fcd9e9b8, type: 3}
     - target: {fileID: 2429063542262755840, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -12838,6 +12842,10 @@ PrefabInstance:
       propertyPath: UpdateHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1926577446}
+    - target: {fileID: 2459210496767254169, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: toggleKey
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 3051636031606587191, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
       propertyPath: questManager
       value: 
@@ -12848,7 +12856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3966317921308130310, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936904753280233453, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
+      propertyPath: toggleKey
+      value: 99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcb7d726b1eeed47989ea6c82b38973, type: 3}
