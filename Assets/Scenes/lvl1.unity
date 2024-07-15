@@ -21061,6 +21061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 169268989319723902, guid: a35a23991003a5b4a90743806242d709, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1629277215464059998, guid: a35a23991003a5b4a90743806242d709, type: 3}
       propertyPath: m_Name
       value: CompaCubo
@@ -21108,6 +21112,10 @@ PrefabInstance:
     - target: {fileID: 3457815737115355282, guid: a35a23991003a5b4a90743806242d709, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970655715727652445, guid: a35a23991003a5b4a90743806242d709, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35a23991003a5b4a90743806242d709, type: 3}
@@ -21169,6 +21177,14 @@ PrefabInstance:
     - target: {fileID: 1192469995614230532, guid: ea194e4506dba9b4da9bcb9bda9fda7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192469995653529768, guid: ea194e4506dba9b4da9bcb9bda9fda7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192469995653529768, guid: ea194e4506dba9b4da9bcb9bda9fda7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 1192469995778408084, guid: ea194e4506dba9b4da9bcb9bda9fda7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21738,18 +21754,14 @@ PrefabInstance:
       propertyPath: textMeshPro
       value: 
       objectReference: {fileID: 1882813606}
-    - target: {fileID: 619792317845163418, guid: 6812906d3df672441806ada9cb14d084, type: 3}
-      propertyPath: cubeConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: c8fc2435d96215043baa854240862685, type: 2}
-    - target: {fileID: 619792317845163418, guid: 6812906d3df672441806ada9cb14d084, type: 3}
-      propertyPath: attractionRadius
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2195309427590438042, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: healthData
       value: 
       objectReference: {fileID: 11400000, guid: 13118f114c1945649b8a67a737954c2c, type: 2}
+    - target: {fileID: 2797749379742120073, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2994722592660275146, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -21818,6 +21830,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d0e2e976fc53da243bc1cb272df1ed9f, type: 3}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: repelSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c754ab58e6fd3f2469a0438df6feaf61, type: 3}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: releaseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5fa1b43e17ae67e41976386ba974a268, type: 3}
     - target: {fileID: 7805402998060909607, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -21845,14 +21869,6 @@ PrefabInstance:
     - target: {fileID: 7805402998060909607, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0.24474904
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993054371887796402, guid: 6812906d3df672441806ada9cb14d084, type: 3}
-      propertyPath: cubeConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: c8fc2435d96215043baa854240862685, type: 2}
-    - target: {fileID: 7993054371887796402, guid: 6812906d3df672441806ada9cb14d084, type: 3}
-      propertyPath: repulsionRadius
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8568502827592104511, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_Volume

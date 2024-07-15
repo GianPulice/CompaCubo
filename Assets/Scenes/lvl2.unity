@@ -12947,6 +12947,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: grabSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d0e2e976fc53da243bc1cb272df1ed9f, type: 3}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: repelSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c754ab58e6fd3f2469a0438df6feaf61, type: 3}
+    - target: {fileID: 7030132953795048935, guid: 6812906d3df672441806ada9cb14d084, type: 3}
+      propertyPath: releaseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5fa1b43e17ae67e41976386ba974a268, type: 3}
     - target: {fileID: 7805402998060909607, guid: 6812906d3df672441806ada9cb14d084, type: 3}
       propertyPath: m_ClearFlags
       value: 2

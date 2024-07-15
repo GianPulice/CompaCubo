@@ -5,6 +5,7 @@ using UnityEngine;
 public class C_Health : MonoBehaviour
 {
     public C_HealthData healthData;
+    public int currentHealth;  
     private C_lives playerLives;
     private C_CheckPoint checkPoint;
     private QuestManager questManager;
@@ -14,8 +15,7 @@ public class C_Health : MonoBehaviour
     {
         if (healthData != null)
         {
-            healthData.ResetHealth();
-            healthData.ResetLives();
+            ResetHealth();
             StartCoroutine(RegenerateHealth());
         }
 
@@ -23,22 +23,23 @@ public class C_Health : MonoBehaviour
         checkPoint = GetComponent<C_CheckPoint>();
         questManager = FindObjectOfType<QuestManager>();
 
-
         AudioSource[] audioSources = GetComponents<AudioSource>();
         if (audioSources.Length >= 3)
         {
-            damageAudioSource = audioSources[2]; 
-
+            damageAudioSource = audioSources[3];
         }
-     
     }
 
     public void TakeDamage(int damageAmount)
     {
         if (healthData != null)
         {
-            healthData.TakeDamage(damageAmount);
-            Debug.Log($"{damageAmount} damage, current health: {healthData.currentHealth}");
+            currentHealth -= damageAmount;
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
+            Debug.Log($"{damageAmount} damage, current health: {currentHealth}");
 
             UI_Updater.Instance.UpdateHealth.Invoke();
 
@@ -49,7 +50,7 @@ public class C_Health : MonoBehaviour
                 damageAudioSource.Play();
             }
 
-            if (healthData.IsDead())
+            if (IsDead())
             {
                 Die();
             }
@@ -67,9 +68,9 @@ public class C_Health : MonoBehaviour
 
         if (healthData != null && checkPoint != null)
         {
-            if (!healthData.OutOfLives())
+            if (!playerLives.OutOfLives())
             {
-                healthData.ResetHealth();
+                ResetHealth();
                 UI_Updater.Instance.UpdateHealth.Invoke();
                 checkPoint.Respawn();
             }
@@ -82,16 +83,26 @@ public class C_Health : MonoBehaviour
         {
             yield return new WaitForSeconds(healthData.healthRegenInterval);
 
-            if (healthData.currentHealth < healthData.maxHealth)
+            if (currentHealth < healthData.maxHealth)
             {
-                healthData.currentHealth += healthData.healthRegenAmount;
-                if (healthData.currentHealth > healthData.maxHealth)
+                currentHealth += healthData.healthRegenAmount;
+                if (currentHealth > healthData.maxHealth)
                 {
-                    healthData.currentHealth = healthData.maxHealth;
+                    currentHealth = healthData.maxHealth;
                 }
 
                 UI_Updater.Instance.UpdateHealth.Invoke();
             }
         }
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = healthData.maxHealth;
+    }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0;
     }
 }

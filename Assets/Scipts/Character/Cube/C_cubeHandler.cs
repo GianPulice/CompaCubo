@@ -13,12 +13,20 @@ public class C_cubeHandler : MonoBehaviour
     private GameObject repelledCube;
     private int originalLayer;
 
-    // Array para almacenar los resultados de OverlapCircleNonAlloc
-    private Collider2D[] overlapResults = new Collider2D[1];
+    private Collider2D[] overlapResults = new Collider2D[10];
+
+    public AudioClip grabSound;
+    public AudioClip releaseSound;
+    public AudioClip repelSound;
+
+    private AudioSource audioSource;
 
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.loop = false;
     }
 
     void Update()
@@ -78,6 +86,8 @@ public class C_cubeHandler : MonoBehaviour
             float direction = playerTransform.localScale.x;
             Vector3 newPosition = playerTransform.position + new Vector3(direction * cubeConfig.distanceFromPlayer, 0, 0);
             attachedCube.transform.position = newPosition;
+
+            PlaySound(grabSound);
         }
     }
 
@@ -87,6 +97,8 @@ public class C_cubeHandler : MonoBehaviour
         {
             isCubeAttached = false;
             attachedCube = null;
+
+            PlaySound(releaseSound);
         }
     }
 
@@ -105,6 +117,8 @@ public class C_cubeHandler : MonoBehaviour
                 originalLayer = repelledCube.layer;
                 repelledCube.layer = LayerMask.NameToLayer("repelledCube");
                 isCubeRepelled = true;
+
+                PlaySound(repelSound);
             }
         }
     }
@@ -133,4 +147,11 @@ public class C_cubeHandler : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, cubeConfig.repulsionRadius);
     }
+
+    void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.loop = false;  
+        audioSource.Play();
+    }   
 }

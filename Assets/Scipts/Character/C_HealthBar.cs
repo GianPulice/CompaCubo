@@ -4,24 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 public class C_HealthBar : MonoBehaviour
 {
-    public Image healthBarImage; // Referencia a la imagen de la barra de salud
-    public C_HealthData playerHealthData; // Referencia al ScriptableObject C_HealthData
+    public Image healthBarImage;
+    public C_Health playerHealth;
 
     void Start()
     {
-        if (healthBarImage == null || playerHealthData == null)
+        if (healthBarImage == null || playerHealth == null)
         {
-            Debug.LogError("Health bar image or player health data is not assigned.");
+            Debug.LogError("not assigned.");
             return;
         }
-    } 
+    }
 
     public void UpdateHealthBar()
     {
-        if (healthBarImage != null && playerHealthData != null)
+        if (healthBarImage != null && playerHealth != null)
         {
-            // Actualizar la cantidad de relleno de la barra de salud basada en la salud actual del jugador
-            healthBarImage.fillAmount = (float)playerHealthData.currentHealth / playerHealthData.maxHealth;
+            healthBarImage.fillAmount = (float)playerHealth.currentHealth / playerHealth.healthData.maxHealth;
         }
     }
 }

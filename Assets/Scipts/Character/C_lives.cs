@@ -9,12 +9,13 @@ public class C_lives : MonoBehaviour
 {
     public TextMeshProUGUI textMeshPro;
     public C_HealthData healthData;
+    public int currentLives;  
 
     void Start()
     {
         if (healthData != null)
         {
-            healthData.ResetLives();
+            ResetLives();
             UpdateLivesUI();
         }
     }
@@ -23,10 +24,9 @@ public class C_lives : MonoBehaviour
     {
         if (healthData != null)
         {
-            healthData.LoseLife();
-            //UpdateLivesUI();
+            LoseLife();
             UI_Updater.Instance.LoseLife.Invoke();
-            if (healthData.OutOfLives())
+            if (OutOfLives())
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
@@ -35,9 +35,24 @@ public class C_lives : MonoBehaviour
 
     public void UpdateLivesUI()
     {
-        if (textMeshPro != null && healthData != null)
+        if (textMeshPro != null)
         {
-            textMeshPro.text = $"{healthData.currentLives}";
+            textMeshPro.text = $"{currentLives}";
         }
+    }
+
+    public void ResetLives()
+    {
+        currentLives = healthData.maxLives;
+    }
+
+    public void LoseLife()
+    {
+        currentLives--;
+    }
+
+    public bool OutOfLives()
+    {
+        return currentLives <= 0;
     }
 }

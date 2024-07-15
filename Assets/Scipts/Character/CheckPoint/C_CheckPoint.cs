@@ -5,21 +5,22 @@ using UnityEngine;
 public class C_CheckPoint : MonoBehaviour
 {
     private Vector3 currentCheckpoint;
-    public C_HealthData healthData;
+    private C_Health playerHealth;
 
     void Start()
     {
         currentCheckpoint = transform.position;
+        playerHealth = GetComponent<C_Health>();
 
-        if (healthData != null)
+        if (playerHealth != null)
         {
-            healthData.currentHealth = healthData.maxHealth;
+            playerHealth.ResetHealth();
         }
     }
 
     void Update()
     {
-        if (healthData != null && healthData.currentHealth <= 0)
+        if (playerHealth != null && playerHealth.IsDead())
         {
             Respawn();
         }
@@ -33,10 +34,11 @@ public class C_CheckPoint : MonoBehaviour
     public void Respawn()
     {
         transform.position = currentCheckpoint;
-        if (healthData != null)
+        if (playerHealth != null)
         {
-            healthData.currentHealth = healthData.maxHealth;
+            playerHealth.ResetHealth();
         }
     }
 }
+
 

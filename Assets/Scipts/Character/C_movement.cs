@@ -23,8 +23,8 @@ public class C_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         MovimientoAnim = GetComponent<Animator>();
         AudioSource[] audioSources = GetComponents<AudioSource>();
-        walkingAudioSource = audioSources[0];
-        jumpAudioSource = audioSources[1];
+        walkingAudioSource = audioSources[1];
+        jumpAudioSource = audioSources[2];
     }
 
     void Update()
